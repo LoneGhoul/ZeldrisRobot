@@ -90,7 +90,9 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+Help_img = "https://telegra.ph/file/c61c646da9de0b0602ead.jpg"
 
+Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
@@ -403,7 +405,8 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
+            Help_img, Caption,
             "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
