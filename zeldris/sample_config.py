@@ -44,6 +44,7 @@ class Config(object):
     MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
     REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislab
     LOAD = []
+    SUPPORT_CHAT = "OnePunchSupport"  # Your own group for support, do not add the @
     NO_LOAD = []
     WEBHOOK = False
     URL = None
