@@ -118,6 +118,7 @@ if ENV:
     CUSTOM_CMD = os.environ.get("CUSTOM_CMD", False)
     API_WEATHER = os.environ.get("API_OPENWEATHER", None)
     WALL_API = os.environ.get("WALL_API", None)
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     API_ID = int(os.environ.get("API_ID", None))
     API_HASH = os.environ.get("API_HASH", None)
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
@@ -186,6 +187,7 @@ else:
     CUSTOM_CMD = Config.CUSTOM_CMD
     API_WEATHER = Config.API_OPENWEATHER
     WALL_API = Config.WALL_API
+    SUPPORT_CHAT = Config.SUPPORT_CHAT
     API_HASH = Config.API_HASH
     API_ID = Config.API_ID
     SPAMWATCH = Config.SPAMWATCH_API
