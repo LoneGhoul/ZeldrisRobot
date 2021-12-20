@@ -91,18 +91,10 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-ZELDRIS_IMG = "https://telegra.ph/file/1fa00785f30375c0c1b50.jpg"
+ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hey there! my name is *{}*. 
-A modular group management bot with useful features. [ㅤ](https://telegra.ph/file/fed9ba09e9add9b197c21.png)
-
-◑ *Uptime:* `{}`
-◑ `{}` *Users, across* `{}` *chats.*
-
-Any issues or need help related to me?
-Join our official group [IDNCoderX](https://t.me/IDNCoderX).
-Click help button to know my commands!
+Hello there i'm [mikey](https://telegra.ph/file/c47701281dd74a8107475.jpg)\nI'll help you to manage your groups
 """
 
 buttons = [
@@ -113,13 +105,13 @@ buttons = [
         ),
         InlineKeyboardButton(
             text="Updates 📢",
-            url="https://t.me/IDNCoder",
+            url="https://t.me/Mikey_updates",
         ),
     ],
     [
         InlineKeyboardButton(
-            text="Add Zeldris to Your Group 👥",
-            url="t.me/ZeldrisRobot?startgroup=true",
+            text="Add mikey to Your Group ",
+            url="t.me/Sanjiro_probot?startgroup=true",
         ),
     ],
 ]
