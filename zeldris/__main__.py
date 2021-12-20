@@ -96,17 +96,17 @@ Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hello there i'm [mikey](https://telegra.ph/file/c47701281dd74a8107475.jpg)\nI'll help you to manage your groups
+Hello there i'm [mikey](https://telegra.ph/file/8d95a8f8d10b04981abcb.jpg)\nI'll help you to manage your groups
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="❔ Help",
+            text="🔧 Help",
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="Updates 📢",
+            text="Updates ⚙️",
             url="https://t.me/Mikey_updates",
         ),
     ],
