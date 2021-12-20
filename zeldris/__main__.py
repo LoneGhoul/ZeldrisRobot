@@ -48,6 +48,7 @@ from zeldris import (
     WEBHOOK,
     CERT_PATH,
     MESSAGE_DUMP,
+    SUPPORT_CHAT,
     PORT,
     URL,
     LOGGER,
