@@ -713,7 +713,7 @@ def main():
         LOGGER.info("[Zeldris] Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
         if MESSAGE_DUMP:
-            updater.bot.send_video(chat_id=-1001747095926, video="https://telegra.ph/file/8b60d6e356ba454c37f59.mp4", text="I'm ready to fight...")
+            updater.bot.send_message(chat_id=-1001747095926, text="I'm ready to fight...")
     if len(argv) not in (1, 3, 4):
         client.disconnect()
     else:
