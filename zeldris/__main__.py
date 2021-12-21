@@ -96,7 +96,7 @@ Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hello there i'm [mikey](https://telegra.ph/file/9d4031fcdc4a0aab387fc.jpg)\nI'll help you to manage your groups
+Hello there i'm [mikey](https://telegra.ph/file/48b6db59bb2071059271f.jpg)\nI'll help you to manage your groups
 """
 
 buttons = [
