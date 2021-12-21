@@ -96,7 +96,7 @@ Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/ac5a1a52a440c6939ea07.jpg)ʜᴇʀᴇ 
+Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/998babc7fca2ab19c8863.jpg) ʜᴇʀᴇ 
 ━━━━━━━━━━━━━━━━━━━━━━
 ᴀᴛ ʏᴏᴜʀ sᴇʀᴠɪᴄᴇ ғʀᴏᴍ ᴛᴏᴋʏᴏ ʀᴇᴠᴇɴɢᴇʀs
 ━━━━━━━━━━━━━━━━━━━━━━
