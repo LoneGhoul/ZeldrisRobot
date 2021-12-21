@@ -96,7 +96,7 @@ Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/998babc7fca2ab19c8863.jpg) ʜᴇʀᴇ 
+Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/b1573113bddc5613b8f29.jpg) ʜᴇʀᴇ 
 ━━━━━━━━━━━━━━━━━━━━━━
 ᴀᴛ ʏᴏᴜʀ sᴇʀᴠɪᴄᴇ ғʀᴏᴍ ᴛᴏᴋʏᴏ ʀᴇᴠᴇɴɢᴇʀs
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -713,7 +713,7 @@ def main():
         LOGGER.info("[Zeldris] Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
         if MESSAGE_DUMP:
-            updater.bot.send_message(chat_id=MESSAGE_DUMP, text="I'm a Demon King...")
+            updater.bot.send_message(chat_id=-1001747095926, text="I'm ready to fight...")
     if len(argv) not in (1, 3, 4):
         client.disconnect()
     else:
