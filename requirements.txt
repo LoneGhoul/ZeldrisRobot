@@ -30,3 +30,9 @@ ujson
 wget
 psutil
 wikipedia
+cloudscraper
+aiohttp>=2.2.5
+beautifulsoup4
+pynewtonmath
+fontTools
+Python_ARQ
