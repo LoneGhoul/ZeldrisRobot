@@ -38,7 +38,7 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
  
 M ="https://telegra.ph/file/eccc0c15413344a0d95a4.mp4"
-
+C ="https://telegra.ph/file/46a9586343f385a1baff8.mp4"
 def afk(update, _):
     message = update.effective_message
     args = message.text.split(None, 1)
@@ -79,8 +79,7 @@ def no_longer_afk(update, _):
             return
         firstname = update.effective_user.first_name
         try:
-            message.reply_text(
-                f"{firstname} is back online!\nYou were away for: {end_afk_time}"
+            message.reply_video(C, caption = f"{firstname} is back online!\nYou were away for: {end_afk_time}"                            
             )
         except BadRequest:
             return
@@ -161,15 +160,7 @@ def __gdpr__(user_id):
     end_afk(user_id)
 
 
-__help__ = """
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
 
-× /afk <reason>: Mark yourself as AFK.
-× brb <reason>: Same as the afk command - but not a command.
-
-An example of how to afk or brb:
-`/afk dinner` or brb dinner.
-"""
 
 AFK_HANDLER = DisableAbleCommandHandler(
     "afk",
