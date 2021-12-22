@@ -128,7 +128,7 @@ buttons = [
 HELP_STRINGS = f"""
 Hello there! My name is *{dispatcher.bot.first_name}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
+the things I can help you with[.](https://telegra.ph/file/342904cf2660db1e8acdd.jpg)
 *Main* commands available:
 × /start: Starts me, can be used to check i'm alive or no...
 × /help: PM's you this message.
@@ -192,8 +192,8 @@ for module_name in ALL_MODULES:
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    dispatcher.bot.send_photo(
-        chat_id=chat_id, photo=Ldkh, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
+    dispatcher.bot.send_text(
+        chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
     )
 
 
