@@ -57,7 +57,9 @@ def afk(update, _):
     REDIS.set(f"afk_time_{user.id}", start_afk_time)
     fname = user.first_name
     try:
-        message.reply_animation(Mikey_v f"{fname} is now AFK!")
+        update.effective_message.reply_video(
+                Mikey_v)
+        update.effective_message.reply_text(f"{fname} is now AFK!")
     except BadRequest:
         pass
 
