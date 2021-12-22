@@ -296,8 +296,7 @@ def error_handler(_, context):
         pass
         # handle all other telegram related errors
 
-@run_async
-def SaitamaRobot_about_callback(update, context):
+def ZeldrisRobot_about_callback(update, context):
     query = update.callback_query
     if query.data == "aboutmanu_":
         query.message.edit_text(
