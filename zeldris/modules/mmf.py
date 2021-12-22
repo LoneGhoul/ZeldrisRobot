@@ -14,7 +14,7 @@ from telegram.utils.helpers import mention_html
 
 from zeldris import dispatcher
 from zeldris.events import register as Nobara
-from zeldris import telethn as bot
+from zeldris import client as bot
 
 
 
