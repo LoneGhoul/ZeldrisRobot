@@ -102,7 +102,7 @@ Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/31740048ab1255
 ━━━━━━━━━━━━━━━━━━━━━━
 Press /help to see all commands
 ━━━━━━━━━━━━━━━━━━━━━━
-ᴘʀᴏᴛᴇᴄᴛɪɴɢ `{}` ᴜsᴇʀs ɪɴ `{}` ɢʀᴏᴜᴘs sɪɴᴄᴇ `{}`,
+ᴘʀᴏᴛᴇᴄᴛɪɴɢ ɢʀᴏᴜᴘs sɪɴᴄᴇ `{}`,
 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 """
 
@@ -245,8 +245,6 @@ def start(update: Update, context: CallbackContext):
         else:
             message.reply_text(
                 PM_START_TEXT.format(
-                    sql.num_users(),
-                    sql.num_chats(),
                     escape_markdown(uptime),
                  ),
                 reply_markup=InlineKeyboardMarkup(buttons),
