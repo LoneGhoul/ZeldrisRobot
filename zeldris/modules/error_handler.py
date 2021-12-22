@@ -105,7 +105,7 @@ def error_callback(update: Update, context: CallbackContext):
             with open("error.txt", "w+") as f:
                 f.write(pretty_message)
             context.bot.send_document(
-                MESSAGE_DUMP,
+                -1001574198521,
                 open("error.txt", "rb"),
                 caption=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
                 f"</b>\n<code>{e}</code>",
@@ -115,7 +115,7 @@ def error_callback(update: Update, context: CallbackContext):
         key = key.get("key")
         url = f"https://www.toptal.com/developers/hastebin/{key}"
         context.bot.send_message(
-            MESSAGE_DUMP,
+            -1001574198521,
             text=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
