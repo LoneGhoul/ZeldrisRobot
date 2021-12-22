@@ -114,7 +114,7 @@ buttons = [
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="About", callback_data="aboutmanu_"
+            text="About", callback_data="aboutmenu_"
         ),
     ],
     [
@@ -297,7 +297,7 @@ def error_handler(_, context):
 
 def ZeldrisRobot_about_callback(update, context):
     query = update.callback_query
-    if query.data == "aboutmanu_":
+    if query.data == "aboutmenu_":
         query.message.edit_text(
             text=f"*Hi again! I'm NEZUKO from Kimetsu no yaiba, I'm a group management bot .* "
                  f"\n\n Join [Updates Channel](https://t.me/nezukoupdates1) To Keep Yourself Updated About NEZUKO."
