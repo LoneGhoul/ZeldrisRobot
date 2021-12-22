@@ -20,7 +20,7 @@ import time
 from telegram import MessageEntity
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler
-
+from telegram import Parasemode
 from zeldris import dispatcher, REDIS
 from zeldris.modules.disable import (
     DisableAbleCommandHandler,
