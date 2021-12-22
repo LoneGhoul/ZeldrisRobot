@@ -90,52 +90,72 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Help_img = "https://telegra.ph/file/c61c646da9de0b0602ead.jpg"
+Help_img = "https://telegra.ph/file/d85f39ca5e58ef5644401.mp4"
 
 Caption = "contact me in pm"
-ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
+ZELDRIS_IMG = "https://telegra.ph/file/7d86fff65fde9284e7e69.jpg"
 
 PM_START_TEXT = """
-Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/31740048ab1255f8f0d45.jpg) ʜᴇʀᴇ 
-━━━━━━━━━━━━━━━━━━━━━━
-ᴀᴛ ʏᴏᴜʀ sᴇʀᴠɪᴄᴇ ғʀᴏᴍ ᴛᴏᴋʏᴏ ʀᴇᴠᴇɴɢᴇʀs
-━━━━━━━━━━━━━━━━━━━━━━
-Press /help to see all commands
-━━━━━━━━━━━━━━━━━━━━━━
-ᴘʀᴏᴛᴇᴄᴛɪɴɢ ɢʀᴏᴜᴘ sɪɴᴄᴇ `{}`,
-≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+ ────「 [𝐕𝐢𝐨𝐥𝐞𝐭 𝐄𝐯𝐞𝐫𝐠𝐚𝐫𝐝𝐞𝐧](https://telegra.ph/file/d8d515b36537c6375246d.jpg) 」────
+➖➖➖➖➖➖➖➖➖➖➖
+An anime themed bot to manage your group
+Press /help to see the commands
+➖➖➖➖➖➖➖➖➖➖➖
+➢ protecting {} users in {} groups since {}
+➖➖➖➖➖➖➖➖➖➖➖
+“𝑯𝒆𝒓𝒆 𝑰 𝒂𝒎 𝒓𝒆𝒂𝒅𝒚 𝒕𝒐 𝒉𝒆𝒍𝒑 𝒚𝒐𝒖 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒑𝒔 𝒆𝒂𝒔𝒊𝒍𝒚...."
 """
+
+EREN_IMG = ""
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="あᴛᴏᴋʏᴏ ɢᴜɪᴅᴇ",
-            callback_data="help_back",
-        ),
-        InlineKeyboardButton(
-            text="➪ᴜᴘᴅᴀᴛᴇs",
-            url="https://t.me/Mikey_updates",
-        ),
-    ],
-    [
-        InlineKeyboardButton(
-            text="✔︎Aᴅᴅ ᴍɪᴋᴇʏ",
-            url="t.me/Sanjiro_probot?startgroup=true",
-        ),
+                                text="➕ ᴀᴅᴅ ᴍᴇ! ➕",
+                                url="t.me/{}?startgroup=true".format(
+                                    context.bot.username,
+                                ),
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="⛩ sᴜᴘᴘᴏʀᴛ ⛩",
+                                url=f"https://t.me/{SUPPORT_CHAT}",
+                            ),
+                            InlineKeyboardButton(
+                                text="🚦 ᴜᴘᴅᴀᴛᴇs 🚦",
+                                url="https://t.me/Dabi_Updates",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text=" ᴡɪᴢᴀʀᴅ ",
+                                url="https://t.me/Dabi_updates/9",
+                            ),
+                            InlineKeyboardButton(
+                                text="ɢʀᴏᴜᴘ",
+                                url="https://t.me/Villains_Association_1",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="⚓️ ʜᴇʟᴘ ⚓️",
+                                url="https://t.me/voilet_probot?start=help",
+                            ),
     ],
 ]
 
-HELP_STRINGS = f"""
-Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
-*Main* commands available:
-× /start: Starts me, can be used to check i'm alive or no...
-× /help: PM's you this message.
-× /help <module name>: PM's you info about that module.
-× /settings: in PM: will send you your settings for all supported modules.
-- in a group: will redirect you to pm, with all that chat's settings.
-\nClick on the buttons below to get documentation about specific modules!"""
+HELP_STRINGS = """
+Hey there, I'm Voilet Evergarden[!](https://telegra.ph/file/6f25e1c920d5ec25c2e53.jpg)
+To make me functional, make sure that i have enough rights in your group.
+Helpful commands:
+- /start: Starts me! You've probably already used this.
+- /help: Sends this message; I'll tell you more about myself!
+- /donate: Gives you info on how to support me and my creator.
+Join My Support If You Have Any Queries: @VillanEvil_Support
+All commands can be used with the following: / !
+List of all the Modules:
+"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -246,9 +266,9 @@ def start(update: Update, context: CallbackContext):
             message.reply_text(
                 PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
-                    escape_markdown(uptime),
                     sql.num_users(),
                     sql.num_chats(),
+                    escape_markdown(uptime),                    
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
@@ -266,11 +286,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="☎️ Support",
-                            url="https://t.me/Mano_sanjiro_support",
+                            url="https://t.me/Villainevil_support",
                         ),
                         InlineKeyboardButton(
                             text="Updates 📡",
-                            url="https://t.me/Mikey_updates",
+                            url="https://t.me/dabi_updates",
                         ),
                     ]
                 ]
@@ -412,7 +432,7 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_photo(
+        update.effective_message.reply_video(
             Help_img, Caption,
             "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
@@ -657,9 +677,7 @@ def is_chat_allowed(update, context):
 
 def main():
 
-    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
-        try:
-            dispatcher.bot.sendMessage(f"@Mano_sanjiro_support", "Norm was Updated ✅")
+            dispatcher.bot.sendMessage(f"@villainevil_support", "[I'm Alive My Dear Support](https://telegra.ph/file/138ca9fd4e1f59501de9a.mp4)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
