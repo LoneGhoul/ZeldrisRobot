@@ -33,18 +33,18 @@ class Config(object):
     # REQUIRED
     TOKEN = ""  # Take from @BotFather
     OWNER_ID = (
-        ""  # If you dont know, run the bot and do /id in your private chat with it
+          # If you dont know, run the bot and do /id in your private chat with it
     )
     OWNER_USERNAME = ""
     API_HASH = None  # for purge stuffs
     API_ID = None
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "sqldbtype://username:pw@hostname:port/db_name"  # needed for any database modules
-    MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
-    REDIS_URL = "redis://something@nothing/anything:10002"  # needed for afk module, get from redislab
+    SQLALCHEMY_DATABASE_URI = "postgresql://xlzbhnyp:FVQzpp344W5yDcXc_cupZHy5qZoehDbN@castor.db.elephantsql.com/xlzbhnyp"  # needed for any database modules
+    MESSAGE_DUMP = -1001501815938  # needed to make sure 'save from' messages persist
+    REDIS_URL = ""  # needed for afk module, get from redislab
     LOAD = []
-    SUPPORT_CHAT = "OnePunchSupport"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "Villainevil_support"  # Your own group for support, do not add the @
     NO_LOAD = []
     WEBHOOK = False
     URL = None
@@ -64,14 +64,14 @@ class Config(object):
     DONATION_LINK = None  # EG, paypal
     CERT_PATH = None
     PORT = 5000
-    DEL_CMDS = False  # Whether or not you should delete "blue text must click" commands
+    DEL_CMDS = True  # Whether or not you should delete "blue text must click" commands
     STRICT_GBAN = True
     WORKERS = 8  # Number of subthreads to use. This is the recommended amount - see for yourself what works best!
     BAN_STICKER = None  # banhammer marie sticker
-    ALLOW_EXCL = False  # DEPRECATED, USE BELOW INSTEAD! Allow ! commands as well as /
+    ALLOW_EXCL = True # DEPRECATED, USE BELOW INSTEAD! Allow ! commands as well as /
     CUSTOM_CMD = False  # Set to ('/', '!') or whatever to enable it, like ALLOW_EXCL but with more custom handler!
-    API_OPENWEATHER = None  # OpenWeather API
-    SPAMWATCH_API = None  # Your SpamWatch token
+    API_OPENWEATHER = ""  # OpenWeather API
+    SPAMWATCH_API = ""  # Your SpamWatch token
     WALL_API = None
 
 
