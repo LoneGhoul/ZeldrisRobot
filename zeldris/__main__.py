@@ -114,7 +114,7 @@ buttons = [
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="About", callback_data="aboutmanu_"),
+            text="About", callback_data="aboutmanu_"
         ),
     ],
     [
