@@ -102,24 +102,24 @@ Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/31740048ab1255
 ━━━━━━━━━━━━━━━━━━━━━━
 Press /help to see all commands
 ━━━━━━━━━━━━━━━━━━━━━━
-ʀᴇᴘʀᴏᴛᴇᴄᴛɪɴɢ ɢʀᴏᴜᴘ sɪɴᴄᴇ `(uptime)`
+ʀᴇᴘʀᴏᴛᴇᴄᴛɪɴɢ ɢʀᴏᴜᴘ Forever
 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="⚙️ Help",
+            text="あᴛᴏᴋʏᴏ ɢᴜɪᴅᴇ",
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="Updates ",
+            text="➪ᴜᴘᴅᴀᴛᴇs",
             url="https://t.me/Mikey_updates",
         ),
     ],
     [
         InlineKeyboardButton(
-            text="Add mikey to Your Group ",
+            text="✔︎Aᴅᴅ ᴍɪᴋᴇʏ",
             url="t.me/Sanjiro_probot?startgroup=true",
         ),
     ],
