@@ -91,7 +91,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 Help_img = "https://telegra.ph/file/c61c646da9de0b0602ead.jpg"
-
+Ldkh = "https://telegra.ph/file/342904cf2660db1e8acdd.jpg"
 Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
@@ -192,8 +192,8 @@ for module_name in ALL_MODULES:
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    dispatcher.bot.send_message(
-        chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
+    dispatcher.bot.send_photo(
+        chat_id=chat_id, photo=Ldkh, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
     )
 
 
