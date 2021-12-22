@@ -296,6 +296,40 @@ def error_handler(_, context):
         pass
         # handle all other telegram related errors
 
+@run_async
+def SaitamaRobot_about_callback(update, context):
+    query = update.callback_query
+    if query.data == "aboutmanu_":
+        query.message.edit_text(
+            text=f"*Hi again! I'm NEZUKO from Kimetsu no yaiba, I'm a group management bot .* "
+                 f"\n\n Join [Updates Channel](https://t.me/nezukoupdates1) To Keep Yourself Updated About NEZUKO."
+                 f"\n\n join [Support Channel](https://t.me/nezukosupport1) To ask queries,give suggestions and report bugs about NEZUKO."
+                 f"\n\nI Can Manage Your Groups Smoothly, With Some Special Features."
+                 f"\n\nYou Can Know More About Me By Clicking The Below Buttons.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                    InlineKeyboardButton(text="How To Use Me", callback_data="aboutmanu_howto"),
+                    InlineKeyboardButton(text="T & C", callback_data="aboutmanu_tac")
+                  ],
+                 [
+                    InlineKeyboardButton(text="Help & Commands", callback_data="help_back")
+                 ],
+                 [
+                    InlineKeyboardButton(text="🔹Back🔹", callback_data="aboutmanu_back")
+                 ] 
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttonss),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60, 
+            )
 
 def help_button(update, context):
     query = update.callback_query
