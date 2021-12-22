@@ -126,17 +126,17 @@ buttons = [
 ]
 
 HELP_STRINGS = f"""
-Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with[.](https://telegra.ph/file/342904cf2660db1e8acdd.jpg)
-*Main* commands available:
-× /start: Starts me, can be used to check i'm alive or no...
-× /help: PM's you this message.
-× /help <module name>: PM's you info about that module.
-× /settings: in PM: will send you your settings for all supported modules.
-- in a group: will redirect you to pm, with all that chat's settings.
-\nClick on the buttons below to get documentation about specific modules!"""
-
+Hey there[!](https://telegra.ph/file/342904cf2660db1e8acdd.jpg) Mikey  again
+━━━━━━━━━━━━━━━━━━━━━━━━
+Tʀᴜsᴛ  In my power
+━━━━━━━━━━━━━━━━━━━━━━━━
+Main commands available:
+ ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
+ ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
+ ━━━━━━━━━━━━━━━━━━━━━━━━
+ For Issues Report At @Mano_sanjiro_support
+ ━━━━━━━━━━━━━━━━━━━━━━━━
+"""
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -192,7 +192,7 @@ for module_name in ALL_MODULES:
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    dispatcher.bot.send_text(
+    dispatcher.bot.send_message(
         chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
     )
 
