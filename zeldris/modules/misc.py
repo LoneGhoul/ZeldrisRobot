@@ -23,9 +23,6 @@ import re
 from io import BytesIO
 from random import randint
 from typing import Optional
-import asyncio
-from aiohttp import ClientSession
-from Python_ARQ import ARQ
 
 import requests
 import wikipedia
@@ -376,26 +373,6 @@ def src(update, _) -> None:
             disable_web_page_preview=True,
         ),
     )
-
-
-@send_action(ChatAction.UPLOAD_PHOTO)
-def wamll(update, context):
-    chat_id = update.effective_chat.id
-    msg = update.effective_message
-    msg_id = update.effective_message.message_id
-    args = context.args
-    api_key = ('RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ') # get it from @arqrobot
-    api_url = "https://thearq.tech"
-    session = ClientSession()
-    wall_ = msg.text.replace(msg.text.split(' ')[0], '')
-    arq = ARQ(api_url, api_key, session)
-    results = await arq.wall(wall_)
-    wallpaper = results.result
-    x = random.choice(wallpaper)
-    print(x.url_image)
-    await msg.reply_photo(x.url_image)
-    await session.close()
-
 
 
 @typing_action
