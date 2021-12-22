@@ -44,6 +44,8 @@ from zeldris import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
+    WHITELIST_USERS,
+    SUPPORT_USERS
     spamwtc,
     dispatcher,
 )
@@ -215,8 +217,8 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "My Owner in the house Let's party 🎉",
+                update.effective_message.reply_photo("https://telegra.ph/file/64795f3c6891d696b63bb.jpg",
+                    "Monarch Entered The Chat!!!",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -229,7 +231,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "My Dev Here, let's see what happened now 🔥",
+                    "Be Cool! A Villain just joined the group!",
                     reply_to_message_id=reply,
                 )
                 continue
