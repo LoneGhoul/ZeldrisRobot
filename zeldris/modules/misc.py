@@ -23,6 +23,9 @@ import re
 from io import BytesIO
 from random import randint
 from typing import Optional
+import asyncio
+from aiohttp import ClientSession
+from Python_ARQ import ARQ
 
 import requests
 import wikipedia
@@ -155,25 +158,28 @@ def info(update, context):
     except BaseException:
         pass  # Don't break on exceptions like if api is down?
 
+    disaster_level_present = False
+
     if user.id == OWNER_ID:
-        text += "\n\nAye this guy is my owner.\nI would never do anything against him!"
-
+        text += ("\n\nThe Disaster level of this person is <b>'MONARCH'</b>.")
+        disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += (
-            "\n\nThis person is one of my dev users! "
-            "Nearly as powerful as my owner - so watch it."
-        )
-
+        text += ("\n\nThis user is  the <b>'Villain'</b>.")
+        disaster_level_present = True
     elif user.id in SUPPORT_USERS:
         text += (
-            "\n\nThis person is one of my support users! "
-            "Not quite a sudo user, but can still gban you off the map."
+            "\n\n This user is the <b>'Dragon'</b>""
         )
-
+        disaster_level_present = True
     elif user.id in WHITELIST_USERS:
         text += (
-            "\n\nThis person has been whitelisted! "
-            "That means I'm not allowed to ban/kick them."
+            "\n\n This user is the <b>'Assassin'</b>""
+        )
+        disaster_level_present = True
+
+    if disaster_level_present:
+        text += ' [<a href="https://t.me/DABI_UPDATES/9">?</a>]'.format(
+            bot.username,
         )
 
     try:
@@ -363,7 +369,7 @@ def src(update, _) -> None:
                 [
                     InlineKeyboardButton(
                         text="GitHub repo",
-                        url="github.com/IDN-C-X/ZeldrisRobot",
+                        url="https://t.me/villainevil_Support/5643",
                     ),
                 ],
             ],
@@ -373,47 +379,23 @@ def src(update, _) -> None:
 
 
 @send_action(ChatAction.UPLOAD_PHOTO)
-def wall(update, context):
+def wamll(update, context):
     chat_id = update.effective_chat.id
     msg = update.effective_message
     msg_id = update.effective_message.message_id
     args = context.args
-    query = " ".join(args)
-    if not query:
-        msg.reply_text("Please enter a query!")
-        return
-    caption = query
-    term = query.replace(" ", "%20")
-    json_rep = requests.get(
-        f"https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search&term={term}"
-    ).json()
-    if not json_rep.get("success"):
-        msg.reply_text("An error occurred!")
+    api_key = ('RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ') # get it from @arqrobot
+    api_url = "https://thearq.tech"
+    session = ClientSession()
+    wall_ = msg.text.replace(msg.text.split(' ')[0], '')
+    arq = ARQ(api_url, api_key, session)
+    results = await arq.wall(wall_)
+    wallpaper = results.result
+    x = random.choice(wallpaper)
+    print(x.url_image)
+    await msg.reply_photo(x.url_image)
+    await session.close()
 
-    else:
-        wallpapers = json_rep.get("wallpapers")
-        if not wallpapers:
-            msg.reply_text("No results found! Refine your search.")
-            return
-        index = randint(0, len(wallpapers) - 1)  # Choose random index
-        wallpaper = wallpapers[index]
-        wallpaper = wallpaper.get("url_image")
-        wallpaper = wallpaper.replace("\\", "")
-        context.bot.send_photo(
-            chat_id,
-            photo=wallpaper,
-            caption="Preview",
-            reply_to_message_id=msg_id,
-            timeout=60,
-        )
-        context.bot.send_document(
-            chat_id,
-            document=wallpaper,
-            filename="wallpaper",
-            caption=caption,
-            reply_to_message_id=msg_id,
-            timeout=60,
-        )
 
 
 @typing_action
@@ -494,17 +476,38 @@ def rmemes(update, context):
         return msg.reply_text(f"Error! {excp.message}")
 
 
-def staff_ids(update, _):
-    sfile = "List of SUDO & SUPPORT users:\n"
-    sfile += f"× SUDO USER IDs; {DEV_USERS}\n"
-    sfile += f"× SUPPORT USER IDs; {SUPPORT_USERS}"
-    with BytesIO(str.encode(sfile)) as output:
-        output.name = "staff-ids.txt"
-        update.effective_message.reply_document(
-            document=output,
-            filename="staff-ids.txt",
-            caption="Here is the list of SUDO & SUPPORTS users.",
-        )
+def sudo_ids(update, _):
+        reply = "<b>Known DRAGON Disasters :</b>\n"
+    for each_user in SUPPORT_USERS:
+        user_id = int(each_user)
+        try:
+            user = bot.get_chat(user_id)
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
+def dev_ids(update, _):
+        reply = "<b>Known VILLAIN Disasters :</b>\n"
+    for each_user in DEV_USERS:
+        user_id = int(each_user)
+        try:
+            user = bot.get_chat(user_id)
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
+def support_ids(update, _):
+        reply = "<b>Known ASSASSIN Disasters :</b>\n"
+    for each_user in WHITELIST_USERS:
+        user_id = int(each_user)
+        try:
+            user = bot.get_chat(user_id)
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 def stats(update, _):
@@ -581,15 +584,18 @@ GDPR_HANDLER = CommandHandler(
     "gdpr", gdpr, filters=Filters.chat_type.private, run_async=True
 )
 WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki, run_async=True)
-WALLPAPER_HANDLER = DisableAbleCommandHandler(
-    "wall", wall, pass_args=True, run_async=True
-)
 UD_HANDLER = DisableAbleCommandHandler("ud", ud, run_async=True)
 GETLINK_HANDLER = CommandHandler(
     "getlink", getlink, pass_args=True, filters=Filters.user(DEV_USERS), run_async=True
 )
-STAFFLIST_HANDLER = CommandHandler(
-    "staffids", staff_ids, filters=Filters.user(DEV_USERS), run_async=True
+DEVLIST_HANDLER = CommandHandler(
+    "villains", dev_ids, filters=Filters.user(DEV_USERS), run_async=True
+)
+SUDOLIST_HANDLER = CommandHandler(
+    "dragons", sudo_ids, filters=Filters.user(DEV_USERS), run_async=True
+)
+SUPPLIST_HANDLER = CommandHandler(
+    "assassins", support_ids, filters=Filters.user(DEV_USERS), run_async=True
 )
 REDDIT_MEMES_HANDLER = DisableAbleCommandHandler("rmeme", rmemes, run_async=True)
 SRC_HANDLER = CommandHandler(
@@ -597,7 +603,6 @@ SRC_HANDLER = CommandHandler(
 )
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, run_async=True)
 
-dispatcher.add_handler(WALLPAPER_HANDLER)
 dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
@@ -607,7 +612,9 @@ dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(GDPR_HANDLER)
 dispatcher.add_handler(WIKI_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
-dispatcher.add_handler(STAFFLIST_HANDLER)
+dispatcher.add_handler(DEVLIST_HANDLER)
+dispatcher.add_handler(SUDOLIST_HANDLER)
+dispatcher.add_handler(SUPPLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
 dispatcher.add_handler(PASTE_HANDLER)
