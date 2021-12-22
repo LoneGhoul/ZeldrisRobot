@@ -38,7 +38,7 @@ from zeldris.modules.users import get_user_id
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
  
-Mikey_v ="https://telegra.ph/file/eccc0c15413344a0d95a4.mp4"
+
 
 def afk(update, _):
     message = update.effective_message
@@ -57,9 +57,7 @@ def afk(update, _):
     REDIS.set(f"afk_time_{user.id}", start_afk_time)
     fname = user.first_name
     try:
-        update.effective_message.reply_video(
-                Mikey_v)
-        update.effective_message.reply_text(f"{fname} is now AFK!")
+        update.effective_message.reply_text(f"{fname} is now AFK[!](https://telegra.ph/file/eccc0c15413344a0d95a4.mp4)", parse_mode=ParseMode.MARKDOWN)
     except BadRequest:
         pass
 
