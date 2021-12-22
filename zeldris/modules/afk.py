@@ -20,7 +20,6 @@ import time
 from telegram import MessageEntity
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler
-from telegram import Parasemode
 from zeldris import dispatcher, REDIS
 from zeldris.modules.disable import (
     DisableAbleCommandHandler,
@@ -38,7 +37,7 @@ from zeldris.modules.users import get_user_id
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
  
-
+M ="https://telegra.ph/file/eccc0c15413344a0d95a4.mp4"
 
 def afk(update, _):
     message = update.effective_message
@@ -57,7 +56,7 @@ def afk(update, _):
     REDIS.set(f"afk_time_{user.id}", start_afk_time)
     fname = user.first_name
     try:
-        update.effective_message.reply_text(f"{fname} is now AFK[!](https://telegra.ph/file/eccc0c15413344a0d95a4.mp4)", parse_mode=ParseMode.MARKDOWN)
+        update.effective_message.reply_video( M, caption = f"{fname} is now AFK!")
     except BadRequest:
         pass
 
