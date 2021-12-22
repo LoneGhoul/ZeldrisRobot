@@ -94,6 +94,7 @@ Help_img = "https://telegra.ph/file/c61c646da9de0b0602ead.jpg"
 Ldkh = "https://telegra.ph/file/342904cf2660db1e8acdd.jpg"
 Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
+SUMPPORT = "Mano_sanjiro_support"
 
 PM_START_TEXT = """
 Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/31740048ab1255f8f0d45.jpg) ʜᴇʀᴇ 
@@ -134,7 +135,7 @@ Main commands available:
  ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
  ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
  ━━━━━━━━━━━━━━━━━━━━━━━━
- For Issues Report At @Mano_sanjiro_support
+ For Issues Report At @{SUMPPORT}
  ━━━━━━━━━━━━━━━━━━━━━━━━
 """
 IMPORTED = {}
