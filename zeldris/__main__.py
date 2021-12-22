@@ -96,11 +96,13 @@ Caption = "contact me in pm"
 ZELDRIS_IMG = "https://telegra.ph/file/d4f2e6ed670ab3edd0195.jpg"
 
 PM_START_TEXT = """
-Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/56039f02035c2b0825fdf.jpg) ʜᴇʀᴇ 
+Hᴇʟʟᴏ ᴛʜᴇʀᴇ [ᴍɪᴋᴇʏ](https://telegra.ph/file/31740048ab1255f8f0d45.jpg) ʜᴇʀᴇ 
 ━━━━━━━━━━━━━━━━━━━━━━
 ᴀᴛ ʏᴏᴜʀ sᴇʀᴠɪᴄᴇ ғʀᴏᴍ ᴛᴏᴋʏᴏ ʀᴇᴠᴇɴɢᴇʀs
 ━━━━━━━━━━━━━━━━━━━━━━
-ɪ ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs
+Press /help to see all commands
+━━━━━━━━━━━━━━━━━━━━━━
+ɪ ᴀᴍ ʀᴇᴘʀᴏᴛᴇᴄᴛɪɴɢ ɢʀᴏᴜᴘ sɪɴᴄᴇ `{}`
 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 """
 
