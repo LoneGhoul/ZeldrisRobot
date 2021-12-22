@@ -44,6 +44,7 @@ from zeldris import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
+    SUPPORT_USERS,
     spamwtc,
     dispatcher,
 )
@@ -173,7 +174,8 @@ def send(update, message, keyboard, backup_message):
             LOGGER.exception()
     return msg
 
-
+ Mc ="https://telegra.ph/file/3b04619b9835f9a3d4746.jpg"
+ Mh ="https://telegra.ph/file/0c03feba921929f6a81bf.jpg"
 @loggable
 def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
     bot, job_queue = context.bot, context.job_queue
@@ -215,8 +217,8 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "My Owner in the house Let's party 🎉",
+                update.effective_message.reply_photo(
+                   Mc, caption="My Owner in the house Let's party 🎉",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -228,8 +230,8 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
-                update.effective_message.reply_text(
-                    "My Dev Here, let's see what happened now 🔥",
+                update.effective_message.reply_photo(
+                  Mh, caption="My Dev Here, let's see what happened now 🔥",
                     reply_to_message_id=reply,
                 )
                 continue
