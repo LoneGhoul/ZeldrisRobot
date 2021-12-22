@@ -29,6 +29,7 @@ from zeldris import (
     OWNER_ID,
     DEV_USERS,
     SUPPORT_USERS,
+    WHITELIST_USERS,
     STRICT_GBAN,
     MESSAGE_DUMP,
     spamwtc,
@@ -99,13 +100,19 @@ def gban(update, context):
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "I spy, with my little eye... a sudo user war! Why are you guys turning on each other?"
+            "I spy, with my little eye... a war of Villains! Why are you guys turning on each other?"
         )
         return
 
     if int(user_id) in SUPPORT_USERS:
         message.reply_text(
-            "OOOH someone's trying to gban a support user! *grabs popcorn*"
+            "OOOH someone's trying to gban a dragon! *grabs popcorn*"
+        )
+        return
+
+    if int(user_id) in WHITELIST_USERS:
+        message.reply_text(
+            "OOOH someone's trying to gban a Assassin! *grabs popcorn*"
         )
         return
 
@@ -158,7 +165,7 @@ def gban(update, context):
             context.bot.sendMessage(
                 MESSAGE_DUMP,
                 "<b>Global Ban Reason Update</b>"
-                "\n<b>Sudo Admin:</b> {}"
+                "\n<b> Admin:</b> {}"
                 "\n<b>User:</b> {}"
                 "\n<b>ID:</b> <code>{}</code>"
                 "\n<b>Previous Reason:</b> {}"
@@ -207,7 +214,7 @@ def gban(update, context):
         "<b>New Global Ban</b>"
         "\n#GBAN"
         "\n<b>Status:</b> <code>Enforcing</code>"
-        "\n<b>Sudo Admin:</b> {}"
+        "\n<b>Admin:</b> {}"
         "\n<b>User:</b> {}"
         "\n<b>ID:</b> <code>{}</code>"
         "\n<b>Reason:</b> {}".format(
@@ -255,7 +262,7 @@ def ungban(update, context):
         "<b>Regression of Global Ban</b>"
         "\n#UNGBAN"
         "\n<b>Status:</b> <code>Ceased</code>"
-        "\n<b>Sudo Admin:</b> {}"
+        "\n<b>Admin:</b> {}"
         "\n<b>User:</b> {}"
         "\n<b>ID:</b> <code>{}</code>".format(
             mention_html(banner.id, banner.first_name),
@@ -417,7 +424,7 @@ def __user_info__(user_id):
 
     text = "<b>Globally banned</b>: {}"
 
-    if int(user_id) in DEV_USERS + SUPPORT_USERS:
+    if int(user_id) in DEV_USERS + SUPPORT_USERS + WHITELIST_USERS:
         return ""
     if is_gbanned:
         text = text.format("Yes")
