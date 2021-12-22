@@ -26,6 +26,7 @@ from telegram.ext import CallbackContext
 from zeldris import (
     DEL_CMDS,
     DEV_USERS,
+    SUPPORT_USERS,
     WHITELIST_USERS,
     dispatcher,
 )
@@ -44,6 +45,7 @@ def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -
         chat.type == "private"
         or user_id in DEV_USERS
         or user_id in WHITELIST_USERS
+        or user_id in SUPPORT_USERS
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
     ):
@@ -58,6 +60,7 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if (
         chat.type == "private"
         or user_id in DEV_USERS
+        or user_id in SUPPORT_USERS
         or user_id in {777000, 1087968824}
         or chat.all_members_are_administrators
     ):
@@ -228,7 +231,7 @@ def dev_plus(func):
         else:
             update.effective_message.reply_text(
                 "This is a developer restricted command."
-                " You do not have permissions to run this."
+                " You do not have permissions to run this.Learn more at @Villainevil_support"
             )
 
     return is_dev_plus_func
