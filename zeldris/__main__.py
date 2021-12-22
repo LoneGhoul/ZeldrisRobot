@@ -114,8 +114,7 @@ buttons = [
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="➪ᴜᴘᴅᴀᴛᴇs",
-            url="https://t.me/Mikey_updates",
+            text="About", callback_data="aboutmanu_"),
         ),
     ],
     [
