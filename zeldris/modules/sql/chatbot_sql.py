@@ -68,7 +68,7 @@ def rem_chat(chat_id):
 def chmt_chat(chat_id):
     with INSERTION_LOCK:
         autochat = SESSION.query(ChatbotChats).get(str(chat_id))
-        if autochat:
+        if not autochat:
             SESSION.add(autochat)
 
         SESSION.commit()
