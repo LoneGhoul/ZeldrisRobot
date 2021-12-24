@@ -65,6 +65,14 @@ def rem_chat(chat_id):
 
         SESSION.commit()
 
+def chmt_chat(chat_id):
+    with INSERTION_LOCK:
+        autochat = SESSION.query(ChatbotChats).get(str(chat_id))
+        if autochat:
+            SESSION.add(autochat)
+
+        SESSION.commit()
+
 
 def get_all_chats():
     try:
